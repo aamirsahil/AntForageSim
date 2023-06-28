@@ -89,10 +89,6 @@ function Canvas(){
         console.log(color);
         this.rect_array_2[agent.y][agent.x].styles({ stroke: color, fill: color });
       }
-      if(world.time == 0) print();
-      if(world.time == 1000) print();
-      if(world.time == 70000) print();
     }
-    
   }
   
