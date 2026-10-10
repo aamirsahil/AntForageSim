@@ -22,7 +22,7 @@ Array.prototype.random = function(){
   
   var currentDefaultValues = {
     antCount: 10,
-    evaporationRate: 0.01,
+    evaporationRate: 0.99,
     dispersionRate: 0.04,
     action1: true,
     action2: true,
@@ -101,7 +101,7 @@ Array.prototype.random = function(){
     if(timer_count % bin_length == 0){ DOM.update(simulation); }
   
     timer_count++;
-    if(timer_count % 100 == 0){ qEpsilon *= 0.99; } // Reducing exploration in qLearning over time
+    if(timer_count % 100 == 0){ qEpsilon *= 0.01; } // Reducing exploration in qLearning over time
   
     if(stop){ simulationRunning = false; return }
   
