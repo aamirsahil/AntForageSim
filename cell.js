@@ -24,7 +24,7 @@ function Cell(){
       if(this.homePher > 1){ this.homePher = 1; }
       if(this.homePher < 0.001){ this.homePher = 0; }
   
-      this.foodPher += (havg-this.foodPher)*dispersionRate;
+      this.foodPher += (favg-this.foodPher)*dispersionRate;
       this.foodPher *= evaporationRate;
       if(this.foodPher > 1){ this.foodPher = 1; }
       if(this.foodPher < 0.001){ this.foodPher = 0; }
