@@ -132,21 +132,47 @@ function Agent(actions=[0,1,2,3,4], q=null){
   /****************************************************************************/
   /** @class Agent @func followPher */
 
-  this.followPher = function(l,c,r){
-    if(l == c && c == r){
-      var temp_rand = Math.random();
-      if(temp_rand < 0.3333){ this.turnLeft(); }
-      else if(temp_rand < 0.6666){ this.turnRight(); }
-      else { this.goForward(); }
-      return
-    }
+  // this.followPher = function(l,c,r){
+  //   if(l == c && c == r){
+  //     var temp_rand = Math.random();
+  //     if(temp_rand < 0.3333){ this.turnLeft(); }
+  //     else if(temp_rand < 0.6666){ this.turnRight(); }
+  //     else { this.goForward(); }
+  //     return
+  //   }
 
-    var m = d3.max([l,c,r]);
-    if(m == c){}
-    else if(m == l){ this.turnLeft(); }
-    else{ this.turnRight(); }
-    this.goForward();
-  }
+  //   var m = d3.max([l,c,r]);
+  //   if(m == c){}
+  //   else if(m == l){ this.turnLeft(); }
+  //   else{ this.turnRight(); }
+  //   this.goForward();
+  // }
+
+
+  this.followPher = function(l, c, r) {
+      var values = [l, c, r];
+      var m = d3.max(values);
+
+      var candidates = [];
+      for (var i = 0; i < values.length; i++) {
+          if (values[i] === m) {
+              candidates.push(i);
+          }
+      }
+
+      var choice = candidates[
+          Math.floor(Math.random() * candidates.length)
+      ];
+
+      if (choice === 0) {
+          this.turnLeft();
+      } else if (choice === 2) {
+          this.turnRight();
+      }
+
+      this.goForward();
+  };
+
 
   /****************************************************************************/
   /** @class Agent @func moveRandomly */
