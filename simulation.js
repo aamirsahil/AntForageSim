@@ -17,7 +17,7 @@ function Simulation(){
     this.posReward=10;			         // reward for completing a trip
     this.negReward=-1;                   // reward for moving
 
-    this.qEpsilon=0.1;			         // Q-Learning exploration rate
+    this.qEpsilon=0.4;			         // Q-Learning exploration rate
     this.qLambda=0.95;			         // Q-Learning future discount rate
     this.qAlpha=0.2;				     // Q-Learning learning rate
 
