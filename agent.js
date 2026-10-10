@@ -5,7 +5,8 @@ function Agent(actions=[0,1,2,3,4], q=null){
   this.hasFood = 0;
   this.foodCount = 0;
   this.pherTime = 0;
-  this.ai = new QLearn(qEpsilon, qLambda, qAlpha, q);
+  // this.ai = new QLearn(qEpsilon, qLambda, qAlpha, q);
+  this.ai = new QLearn(qEpsilon, qAlpha, qLambda, q);
   this.ai.setActions(actions);
   this.foodCount_array = [];
   this.action_array = [];
@@ -30,7 +31,9 @@ function Agent(actions=[0,1,2,3,4], q=null){
 
     if(this.pherTime < 5){ this.pherTime++; } /** @param */
 
-    var state_arr = [this.hasFood, this.getHomePherLevel(), this.getFoodPherLevel(), this.pherTime];
+    // var state_arr = [this.hasFood, this.getHomePherLevel(), this.getFoodPherLevel(), this.pherTime];
+    var state_arr = [this.getHomePherLevel(), this.getFoodPherLevel(), this.pherTime];
+
     var state = '';
     for(var i = 0; i < state_arr.length; i++){ state += state_arr[i]; }
 
