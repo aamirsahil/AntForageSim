@@ -259,7 +259,7 @@ Array.prototype.random = function(){
   function applyDefaultValues(){
     simulation.antCount = currentDefaultValues.antCount;
     simulation.dispersionRate = currentDefaultValues.dispersionRate;
-    simulation.evaporationRate = 1 - currentDefaultValues.evaporationRate;
+    simulation.evaporationRate = currentDefaultValues.evaporationRate;
   
     simulation.actions = [];
     if( currentDefaultValues.action1 ){ simulation.actions.push(0); }
